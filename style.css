@@ -113,7 +113,10 @@ ul button {
     border-radius: 48px;
     border: none;
 }
-
+.ban-button{
+    display: inline-flex;
+    gap: .8rem;
+}
 .button2 {
     color: #FFF;
     font-size: 20px;
@@ -122,7 +125,7 @@ ul button {
     padding: 1rem 2rem;
     border-radius: 48px;
     border: none;
-    margin-left: 1rem;
+    
 }
 
 .ban-img {
@@ -197,25 +200,57 @@ font-weight: 700;
 .online-games-img{
     width: 100%;
     /* border: 1px solid blue; */
+    position: relative;
 }
+
 .online-games-img-cont{
     display: flex;
     gap: 1.5rem;
 }
 .online-games-img>img{
     width: 100%;
+    position: relative;
+    /* extra */
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+  backface-visibility: hidden;
 }
-
-card>img:hover{
-    cursor: pointer;
+/* extar */
+.over{
+    transition: .5s ease;
+    opacity: 0 ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+}
+.online-games-img:hover .image {
+    opacity: 0.3;
     
 }
+.online-games-img:hover .over{
+    opacity: 1;
+}
+.overtext{
+  color:#F948B2;
+  font-size: 14px;
+  font-weight: 600;
+  /* padding: 16px 32px; */
+  align-items: center;
+}
+/* extra end */
 
 .ani{
     display: flex;
     gap: 2rem;
-    padding: 1.5rem 6rem;
+    padding: 1.5rem 6rem 0rem;
     align-items: center;
+    /* max-height: 850px; */
+    margin-top: 20px;
 }
 .ani-title{
 font-size: 44px;
@@ -238,11 +273,82 @@ margin-bottom: 2rem;
 .ani-main-img{
     margin-left: 125px;
     width: 80%;
+    margin-top: 100px;
+    
 }
 .extra-img{
-    width: auto;
+    max-width: 100%;
     position: relative;
-    bottom: 275px;
+    bottom: 250px;
+}
+/* types */
+
+.type-d{
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+background: #faf9f9;
+color: #0B0223;
+font-size: 16px;
+font-weight: 600;
+border: none;
+}
+.type-d:hover{
+    border-radius: 50px;
+    cursor: pointer;
+    color: #F948B2;
+    border: 1px solid #F948B2;
+}
+.types{
+    padding: 1.5rem 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+/* footer */
+footer{
+    background: #0B0223;
+    text-align: center;
+    padding: 4rem 0px;
+}
+.foot-heading span {
+        color: #FF42A5;
+}
+.foot-heading{
+    font-size: 45px;
+    font-weight: 700;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: fit-content;
+}
+footer a{
+     text-decoration: none;
+     color:currentColor;
+}
+.foot-text1{
+    color: #FFF;
+font-size: 18px;
+font-weight: 600;
+display: flex;
+gap: 3rem;
+max-width: fit-content;
+margin-top: 3rem;
+margin-bottom: 3rem;
+}
+.foot-icon{
+    display: flex;
+    gap: 2rem;
+    max-width: fit-content ;
+    margin-bottom:3rem;
+}
+.foot-text2{
+    color: #ffffff99;
+font-size: 14px;
+font-weight: 500;
+
 }
 
 @media screen and (max-width:620px) {
@@ -250,7 +356,8 @@ margin-bottom: 2rem;
         padding: 0px 2rem;
         margin: 0px auto;
     }
-    nav , .we{
+    nav , .we , .online-games , .online-games-img-cont ,
+    .ani{
         flex-direction: column;
         padding: 0px;
        
@@ -270,14 +377,87 @@ margin-bottom: 2rem;
         background: rgb(255, 255, 255);
         gap: 1.25rem;
     }
-    .ban-text , .we-text{
+    .ban-text , .we-text , .ani-text{
         margin: 0px;
         width: 100%;
     }
     .ban-img , .we-img{
         width: 100%;
     }
-    .we-text{
+    .we-text , .ani-text{
         text-align: center;
+    }
+    .ani-main-img {
+        width: 80%;
+        margin-top: 0px;
+        margin-left: 50px;
+    }
+    .ani-img{
+        width: 100%;
+        max-height: 100%;
+        margin-bottom: 3rem;
+    }
+.extra-img{
+    max-width: 50%;
+    max-height: 100%;
+    position: relative;
+    bottom: 90px;
+}
+.types{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+#game9{
+    grid-column: span 2;
+}
+.foot-text1 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: .8rem;
+    font-size: 16px;
+}
+.foot-icon{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#foot-text3{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+}
+@media screen and (min-width:621px) and (max-width:1024px) {
+    nav , .banner , .we , .online-games , 
+    .ani , .types{
+        padding: 1.5rem 2rem;
+    }
+    .banner button{
+        margin-bottom: 10px;
+    }
+    .ani{
+        flex-direction: column;
+        
+    }
+    .ani-img{
+       max-height: 950px;
+    }
+    .ani-text{
+        text-align: center;
+    }
+    .ani-main-img{
+        margin-top: 0px;
+    }
+    .types{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+    }
+    .foot-text1 {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: .8rem;
+        font-size: 16px;
     }
 }
