@@ -230,10 +230,13 @@ font-weight: 700;
 }
 .online-games-img:hover .image {
     opacity: 0.3;
+    border-radius: 16px;
+    border: 3px solid #F948B2;
     
 }
 .online-games-img:hover .over{
     opacity: 1;
+    
 }
 .overtext{
   color:#F948B2;
