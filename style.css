@@ -207,7 +207,7 @@ font-weight: 700;
     display: flex;
     gap: 1.5rem;
 }
-.online-games-img>img{
+.image{
     width: 100%;
     position: relative;
     /* extra */
@@ -232,7 +232,6 @@ font-weight: 700;
     opacity: 0.3;
     border-radius: 16px;
     border: 3px solid #F948B2;
-    
 }
 .online-games-img:hover .over{
     opacity: 1;
@@ -355,7 +354,7 @@ font-weight: 500;
 }
 
 @media screen and (max-width:620px) {
-    body{
+    header , main{
         padding: 0px 2rem;
         margin: 0px auto;
     }
@@ -416,6 +415,7 @@ font-weight: 500;
 #game9{
     grid-column: span 2;
 }
+
 .foot-text1 {
     display: grid;
     grid-template-columns: repeat(3,1fr);
