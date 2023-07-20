@@ -521,6 +521,12 @@ footer a {
 
     .ani-text {
         text-align: center;
+        width: 100%;
+    }
+
+    .ani-text>.des{
+          margin: auto;
+         max-width: 500px;
     }
 
     .ani-main-img {
